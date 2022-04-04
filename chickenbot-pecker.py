@@ -36,7 +36,15 @@ def loop():
             x = ErrorMessage.x
             y = ErrorMessage.y + 100
             clickAt(x, y, 0.2)
+        ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/bad_down3.png', grayscale=False, confidence=0.8)
+        if ErrorMessage != None:
+            print("CLUCK I FOUND A BAD CHICKEN!")
+            x = ErrorMessage.x
+            y = ErrorMessage.y - 100
+            clickAt(x, y, 0.2)
         ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/opps.png', grayscale=True, confidence=0.8)
+        if ErrorMessage == None:
+            ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/opps2.png', grayscale=True, confidence=0.8)
         if ErrorMessage != None:
             print("CLUCK I FOUND A BAD CHICKEN!")
             x = ErrorMessage.x
