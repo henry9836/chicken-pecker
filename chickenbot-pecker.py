@@ -62,18 +62,19 @@ def loop():
                 i += 1
                 if i > 10:
                     PlaceImage = pyautogui.locateCenterOnScreen('./chicken-vision/place.png', region=(x-100, y-200, 200, 200), grayscale=True, confidence=0.8)
-                if PlaceImage != None:
-                    clickAt(PlaceImage.x, PlaceImage.y, 0.2)
-                    print("Chicken Fixed Returning To Watch...")
-                    break
-                
-                Timer = pyautogui.locateCenterOnScreen('./chicken-vision/timer.png', region=(x-100, y-200, 200, 200), grayscale=True, confidence=0.8)
-                if Timer != None:
-                    clickAt(Timer.x, Timer.y, 0.2)
-                    print("Chicken Fixed Returning To Watch...")
-                    break
-                if i > 20:
-                    clickAt(x, PlaceImage.y, 0.2)
+                    if PlaceImage != None:
+                        clickAt(PlaceImage.x, PlaceImage.y, 0.2)
+                        print("Chicken Fixed Returning To Watch...")
+                        break
+                    
+                    Timer = pyautogui.locateCenterOnScreen('./chicken-vision/timer.png', region=(x-100, y-200, 200, 200), grayscale=True, confidence=0.8)
+                    if Timer != None:
+                        clickAt(Timer.x, Timer.y, 0.2)
+                        print("Chicken Fixed Returning To Watch...")
+                        break
+                if i > 15:
+                    clickAt(x, y, 0.2)
+                    print("Chicken Might be Fixed Returning To Watch...")
                     break
         sleep(1)
 
