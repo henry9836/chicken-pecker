@@ -22,15 +22,6 @@ def clickAt(x, y, delay):
     pyautogui.click(x, y)
     sleep(delay)
 
-print(BANNER)
-print("Mother Hen Is Monitoring For Issues...")
-
-while True:
-    try:
-        loop()
-    except:
-        print("CLUCK! Something went wrong, waking mother hen...")
-
 def loop():
     while True:
         ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/opps.png', grayscale=True, confidence=0.9)
@@ -55,4 +46,13 @@ def loop():
                     print("Chicken Fixed Returning To Watch...")
                     break
                 sleep(1)
+        sleep(1)
+
+print(BANNER)
+print("Mother Hen Is Monitoring For Issues...")
+while True:
+    try:
+        loop()
+    except:
+        print("CLUCK! Something went wrong, waking mother hen...")
         sleep(1)
