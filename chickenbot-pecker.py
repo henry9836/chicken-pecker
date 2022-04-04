@@ -45,6 +45,8 @@ def loop():
         ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/opps.png', grayscale=True, confidence=0.8)
         if ErrorMessage == None:
             ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/opps2.png', grayscale=True, confidence=0.8)
+        if ErrorMessage == None:
+            ErrorMessage = pyautogui.locateCenterOnScreen('./chicken-vision/opps3.png', grayscale=False, confidence=0.8)
         if ErrorMessage != None:
             print("CLUCK I FOUND A BAD CHICKEN!")
             x = ErrorMessage.x
@@ -84,6 +86,8 @@ def loop():
                     clickAt(x, y, 0.2)
                     print("Chicken Might be Fixed Returning To Watch...")
                     break
+        
+        pyautogui.moveTo(random.randint(0, 4000), random.randint(0, 1100), duration = 1)
         sleep(1)
 
 print(BANNER)
